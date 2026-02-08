@@ -70,4 +70,51 @@ Users are able to trade the token on the Counterparty DEX, Dispensers or OTC or 
 ## Future Partnerships
 
 There have been ongoing discussions with Emblem, Leather Wallet and Token.Art dev teams. 
+rust + libbitcoinkernel full-node.
 
+Project Status
+
+work-in-progress.
+
+code available at:
+git clone git://bitcoinbackbone.org:/public-release.git (head commit ef48074639)
+
+
+latest updates:
+block 901661
+00000000000000000001e7bf624e4a45ee8649838b89da9e4413be1b96875223
+block 908976
+000000000000000000014348a2a22e1000287a88e47803cf24623c118afbda14
+block 918215
+00000000000000000000ded924e66cd2d2098c55b272dee2e65c34fb0d2bb06b
+block 924179
+00000000000000000001926920b77e91c3c10dddbd7b75ee5f01e3bb3fda83cf
+block 935128
+0000000000000000000122e2402b324ee1d7a9fd692f17b87078f64e4a891893
+
+Backbone Architecture
+
+
+native multi-process with subsystems-dedicated daemons
+
+
+                        mempool_mngrd     tx_relayd
+                              |                 |
+                              |                 |
+                              -------------------
+                                      |
+                                      |
+                                tx_controllerd
+                                      |
+                                      |
+        backbone-cli - - - - - - backboned
+                                      |
+                                      |
+                      ---------------------------------
+                      |               |               |
+                      |               |               |
+              addr_controllerd   block_relayd    topo_mngrd
+
+
+stamp (sha256):
+b844f17c2f84d3e26035935eccebb5f68abd0ba2f780cb7c7d13e6f0fccfe3ad
